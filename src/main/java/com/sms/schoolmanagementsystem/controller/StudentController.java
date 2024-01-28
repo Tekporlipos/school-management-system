@@ -1,7 +1,10 @@
 package com.sms.schoolmanagementsystem.controller;
 
 import com.sms.schoolmanagementsystem.model.Student;
+import com.sms.schoolmanagementsystem.model.dto.AddStudentDTO;
+import com.sms.schoolmanagementsystem.model.dto.StudentDTO;
 import com.sms.schoolmanagementsystem.repository.StudentRepository;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +22,8 @@ public class StudentController {
     private final StudentRepository studentRepository;
 
     @PostMapping
-    public ResponseEntity<Student> addStudent(@RequestBody Student student) {
-        Student savedStudent = studentRepository.save(student);
-        return new ResponseEntity<>(savedStudent, HttpStatus.CREATED);
+    public ResponseEntity<AddStudentDTO> addStudent(@Valid @RequestBody AddStudentDTO student) {
+        return new ResponseEntity<>(student, HttpStatus.CREATED);
     }
 
     @GetMapping
