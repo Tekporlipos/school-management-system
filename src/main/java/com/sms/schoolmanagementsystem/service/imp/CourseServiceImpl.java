@@ -7,6 +7,7 @@ import com.sms.schoolmanagementsystem.model.dto.course.AddCourseDTO;
 import com.sms.schoolmanagementsystem.model.dto.course.CourseDTO;
 import com.sms.schoolmanagementsystem.repository.CourseRepository;
 import com.sms.schoolmanagementsystem.service.CommonService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,10 +25,12 @@ public class CourseServiceImpl implements CommonService<CourseDTO, AddCourseDTO>
     private final ObjectMapper objectMapper;
 
     @Override
+    @Transactional
     public CourseDTO addEntity(AddCourseDTO dto) {
         if (courseRepository.findCourseByCodeOrName(dto.getCode(),dto.getName()).isPresent()){
             throw new CustomException("Course already exist", HttpStatus.UNPROCESSABLE_ENTITY);
         }
+        System.out.println(objectMapper.convertValue(dto, Course.class));
         Course save = courseRepository.save(objectMapper.convertValue(dto, Course.class));
         return objectMapper.convertValue(save, CourseDTO.class);
     }

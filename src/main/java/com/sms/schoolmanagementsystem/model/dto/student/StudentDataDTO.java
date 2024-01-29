@@ -9,8 +9,6 @@ import java.util.UUID;
 @Data
 public class StudentDataDTO {
 
-    private UUID id;
-
     @NotBlank(message = "Student firstName can not be empty")
     private String firstName;
 

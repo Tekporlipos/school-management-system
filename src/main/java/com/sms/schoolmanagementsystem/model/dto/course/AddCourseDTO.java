@@ -1,6 +1,4 @@
 package com.sms.schoolmanagementsystem.model.dto.course;
-
-import com.sms.schoolmanagementsystem.model.dto.student.AddStudentDTO;
 import com.sms.schoolmanagementsystem.model.dto.student.StudentDataDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

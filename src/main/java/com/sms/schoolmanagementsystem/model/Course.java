@@ -47,10 +47,12 @@ public class Course {
     private Integer maxCapacity;
 
 
-    @ManyToMany(mappedBy = "courses", fetch = FetchType.EAGER)
-    @JsonIgnoreProperties("courses")
-    @JsonManagedReference
-    private Set<Student> students = new HashSet<>();
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "STUDENT_COURSE_TABLE", joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id"))
+    private Set<Student> students;
+
+
 
 
     @Column( columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false, updatable = false)
