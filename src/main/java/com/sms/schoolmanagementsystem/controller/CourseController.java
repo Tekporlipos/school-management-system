@@ -1,8 +1,8 @@
 package com.sms.schoolmanagementsystem.controller;
 
 import com.sms.schoolmanagementsystem.config.ResponseBody;
-import com.sms.schoolmanagementsystem.model.dto.AddCourseDTO;
-import com.sms.schoolmanagementsystem.model.dto.CourseDTO;
+import com.sms.schoolmanagementsystem.model.dto.course.AddCourseDTO;
+import com.sms.schoolmanagementsystem.model.dto.course.CourseDTO;
 import com.sms.schoolmanagementsystem.service.imp.CourseServiceImpl;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

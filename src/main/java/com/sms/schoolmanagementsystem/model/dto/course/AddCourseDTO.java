@@ -1,33 +1,17 @@
-package com.sms.schoolmanagementsystem.model.dto;
+package com.sms.schoolmanagementsystem.model.dto.course;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.sms.schoolmanagementsystem.model.dto.student.AddStudentDTO;
+import com.sms.schoolmanagementsystem.model.dto.student.StudentDataDTO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.util.UUID;
+import java.util.Set;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class AddCourseDTO {
+public class AddCourseDTO extends CourseDataDTO{
 
-    private UUID id;
-
-    @NotBlank(message = "Course name can not be empty")
-    private String name;
-
-    @NotBlank(message = "Course code can not be empty")
-    private String code;
-
-    private String description;
-
-    @NotNull(message = "Course creditHours can not be empty")
-    private Integer creditHours;
-
-    private String department;
-
-    private String instructor;
-
-    @NotNull(message = "Course maxCapacity can not be empty")
-    private Integer maxCapacity;
+    private Set<StudentDataDTO> students;
 
 }

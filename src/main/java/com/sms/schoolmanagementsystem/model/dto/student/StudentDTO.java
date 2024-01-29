@@ -1,11 +1,10 @@
-package com.sms.schoolmanagementsystem.model.dto;
+package com.sms.schoolmanagementsystem.model.dto.student;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -19,8 +18,6 @@ public class StudentDTO extends  AddStudentDTO{
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt = LocalDateTime.now();
-
-    private Set<AddCourseDTO> courses;
 
 }
 

@@ -1,5 +1,6 @@
 package com.sms.schoolmanagementsystem.model;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -11,13 +12,13 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Getter
 @Setter
 @ToString
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Course {
 
     @Id
@@ -46,12 +47,11 @@ public class Course {
     private Integer maxCapacity;
 
 
-    @ManyToMany
-    @JoinTable(
-            name = "student_course",
-            joinColumns = @JoinColumn(name = "course_id"),
-            inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private List<Students> students;
+    @ManyToMany(mappedBy = "courses", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("courses")
+    @JsonManagedReference
+    private Set<Student> students = new HashSet<>();
+
 
     @Column( columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false, updatable = false)
     @CreationTimestamp

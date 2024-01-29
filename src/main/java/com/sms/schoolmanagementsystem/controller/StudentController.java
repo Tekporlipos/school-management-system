@@ -1,11 +1,8 @@
 package com.sms.schoolmanagementsystem.controller;
 
 import com.sms.schoolmanagementsystem.config.ResponseBody;
-import com.sms.schoolmanagementsystem.model.Student;
-import com.sms.schoolmanagementsystem.model.dto.AddStudentDTO;
-import com.sms.schoolmanagementsystem.model.dto.CourseDTO;
-import com.sms.schoolmanagementsystem.model.dto.StudentDTO;
-import com.sms.schoolmanagementsystem.repository.StudentRepository;
+import com.sms.schoolmanagementsystem.model.dto.student.AddStudentDTO;
+import com.sms.schoolmanagementsystem.model.dto.student.StudentDTO;
 import com.sms.schoolmanagementsystem.service.imp.StudentServiceImpl;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -15,8 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController

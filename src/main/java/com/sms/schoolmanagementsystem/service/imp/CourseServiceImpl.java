@@ -2,10 +2,9 @@ package com.sms.schoolmanagementsystem.service.imp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sms.schoolmanagementsystem.config.exception.CustomException;
-import com.sms.schoolmanagementsystem.config.exception.GlobalExceptionHandler;
 import com.sms.schoolmanagementsystem.model.Course;
-import com.sms.schoolmanagementsystem.model.dto.AddCourseDTO;
-import com.sms.schoolmanagementsystem.model.dto.CourseDTO;
+import com.sms.schoolmanagementsystem.model.dto.course.AddCourseDTO;
+import com.sms.schoolmanagementsystem.model.dto.course.CourseDTO;
 import com.sms.schoolmanagementsystem.repository.CourseRepository;
 import com.sms.schoolmanagementsystem.service.CommonService;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.sms.schoolmanagementsystem.model.dto;
+package com.sms.schoolmanagementsystem.model.dto.course;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,7 +8,7 @@ import java.util.UUID;
 
 
 @Data
-public class AddCourseDTO {
+public class CourseDataDTO {
 
     private UUID id;
 
