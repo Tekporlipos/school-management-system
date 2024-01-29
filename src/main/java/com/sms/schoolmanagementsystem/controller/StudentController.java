@@ -1,11 +1,16 @@
 package com.sms.schoolmanagementsystem.controller;
 
+import com.sms.schoolmanagementsystem.config.ResponseBody;
 import com.sms.schoolmanagementsystem.model.Student;
 import com.sms.schoolmanagementsystem.model.dto.AddStudentDTO;
+import com.sms.schoolmanagementsystem.model.dto.CourseDTO;
 import com.sms.schoolmanagementsystem.model.dto.StudentDTO;
 import com.sms.schoolmanagementsystem.repository.StudentRepository;
+import com.sms.schoolmanagementsystem.service.imp.StudentServiceImpl;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,22 +24,26 @@ import java.util.UUID;
 @AllArgsConstructor
 public class StudentController {
 
-    private final StudentRepository studentRepository;
+    private final StudentServiceImpl studentService;
 
     @PostMapping
-    public ResponseEntity<AddStudentDTO> addStudent(@Valid @RequestBody AddStudentDTO student) {
-        return new ResponseEntity<>(student, HttpStatus.CREATED);
+    public ResponseEntity<ResponseBody<StudentDTO>> addStudent(@Valid @RequestBody AddStudentDTO student) {
+        ResponseBody<StudentDTO> studentDTOResponseBody = new ResponseBody<>(studentService.addEntity(student));
+        studentDTOResponseBody.setStatus(HttpStatus.CREATED.value());
+        studentDTOResponseBody.setMessage("Student added successfully");
+        return new ResponseEntity<>(studentDTOResponseBody, HttpStatus.CREATED);
     }
 
     @GetMapping
-    public Iterable<Student> getAllStudents() {
-        return studentRepository.findAll();
+    public ResponseEntity<Page<StudentDTO>> getAllStudents(Pageable pageable) {
+        return ResponseEntity.ok(studentService.getAllEntities(pageable));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable UUID id) {
-        Optional<Student> student = studentRepository.findById(id);
-        return student.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ResponseEntity<ResponseBody<StudentDTO>> getStudentById(@PathVariable UUID id) {
+        ResponseBody<StudentDTO> studentDTOResponseBody = new ResponseBody<>(studentService.getEntityById(id));
+        studentDTOResponseBody.setStatus(HttpStatus.CREATED.value());
+        studentDTOResponseBody.setMessage("Course data retried successfully");
+        return new ResponseEntity<>(studentDTOResponseBody, HttpStatus.CREATED);
     }
 }

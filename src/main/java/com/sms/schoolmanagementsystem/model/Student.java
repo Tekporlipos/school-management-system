@@ -44,6 +44,7 @@ public class Student {
     @Email
     private String email;
 
+    @Column(unique = true)
     private String referenceNumber;
 
     @NotNull

@@ -23,6 +23,9 @@ public class StudentServiceImpl implements CommonService<StudentDTO, AddStudentD
     private final StudentRepository studentRepository;
     @Override
     public StudentDTO addEntity(AddStudentDTO dto) {
+        if (studentRepository.findStudentByEmailOrReferenceNumber(dto.getEmail(),dto.getReferenceNumber()).isPresent()){
+            throw new CustomException("Student already exist", HttpStatus.UNPROCESSABLE_ENTITY);
+        }
         Student student = objectMapper.convertValue(dto, Student.class);
         return objectMapper.convertValue(studentRepository.save(student), StudentDTO.class);
     }

@@ -12172,3 +12172,587 @@ Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method m
 2024-01-29T00:57:37.733Z DEBUG 99365 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomErrorResponse(timestamp=2024-01-29T00:57:37.723593, status=500, error=Validation failed for ar (truncated)...]
 2024-01-29T00:57:37.740Z DEBUG 99365 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.sms.schoolmanagementsystem.config.ResponseBody<com.sms.schoolmanagementsystem.model.dto.CourseDTO>> com.sms.schoolmanagementsystem.controller.CourseController.addCourse(com.sms.schoolmanagementsystem.model.dto.AddCourseDTO) with 2 errors: [Field error in object 'addCourseDTO' on field 'creditHours': rejected value [0]; codes [Positive.addCourseDTO.creditHours,Positive.creditHours,Positive.java.lang.Integer,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [addCourseDTO.creditHours,creditHours]; arguments []; default message [creditHours]]; default message [Student level value must be a positive number]] [Field error in object 'addCourseDTO' on field 'maxCapacity': rejected value [0]; codes [Positive.addCourseDTO.maxCapacity,Positive.maxCapacity,Positive.java.lang.Integer,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [addCourseDTO.maxCapacity,maxCapacity]; arguments []; default message [maxCapacity]]; default message [Student level value must be a positive number]] ]
 2024-01-29T00:57:37.740Z DEBUG 99365 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-01-29T01:03:03.030Z  INFO 99365 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2024-01-29T01:03:03.044Z  INFO 99365 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:03:03.046Z DEBUG 99365 --- [Thread-5] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:03:03.048Z DEBUG 99365 --- [Thread-5] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:03:03.048Z DEBUG 99365 --- [Thread-5] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:03:03.049Z DEBUG 99365 --- [Thread-5] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:03:03.050Z DEBUG 99365 --- [Thread-5] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:03:03.055Z  WARN 99365 --- [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-01-29T01:03:03.056Z  INFO 99365 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29T01:03:03.057Z  INFO 99365 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29T01:03:03.116Z  INFO 99365 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 20.0.2 with PID 99365 (/Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system/target/classes started by tekporlipos in /Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system)
+2024-01-29T01:03:03.116Z  INFO 99365 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-29T01:03:03.204Z  INFO 99365 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-29T01:03:03.208Z  INFO 99365 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
+2024-01-29T01:03:03.259Z  INFO 99365 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-29T01:03:03.259Z  INFO 99365 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29T01:03:03.260Z  INFO 99365 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-29T01:03:03.267Z  INFO 99365 --- [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-01-29T01:03:03.267Z  INFO 99365 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 150 ms
+2024-01-29T01:03:03.274Z  INFO 99365 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-29T01:03:03.275Z  INFO 99365 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-01-29T01:03:03.276Z  INFO 99365 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-29T01:03:03.276Z  INFO 99365 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-29T01:03:03.281Z DEBUG 99365 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-01-29T01:03:03.281Z DEBUG 99365 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-01-29T01:03:03.291Z  INFO 99365 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-29T01:03:03.292Z  INFO 99365 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-29T01:03:03.293Z  INFO 99365 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-29T01:03:03.294Z  WARN 99365 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-01-29T01:03:03.294Z  WARN 99365 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-29T01:03:03.329Z  INFO 99365 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-29T01:03:03.329Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:03:03.329Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:03:03.329Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:03:03.329Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:03:03.329Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:03:03.330Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : create table course (credit_hours integer not null, max_capacity integer not null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, code varchar(255) unique, department varchar(255), description varchar(255), instructor varchar(255), name varchar(255) unique, primary key (id))
+2024-01-29T01:03:03.331Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : create table student (date_of_birth date, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, level bigint not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, address varchar(255), contact_number varchar(255), email varchar(255) unique, first_name varchar(255), last_name varchar(255), reference_number varchar(255), primary key (id))
+2024-01-29T01:03:03.331Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : create table student_course (course_id uuid not null, student_id uuid not null)
+2024-01-29T01:03:03.332Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKq7yw2wg9wlt2cnj480hcdn6dq foreign key (student_id) references student
+2024-01-29T01:03:03.332Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKejrkh4gv8iqgmspsanaji90ws foreign key (course_id) references course
+2024-01-29T01:03:03.333Z  INFO 99365 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:03:03.404Z  WARN 99365 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-29T01:03:03.418Z DEBUG 99365 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2024-01-29T01:03:03.427Z DEBUG 99365 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-01-29T01:03:03.433Z DEBUG 99365 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-29T01:03:03.436Z DEBUG 99365 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-29T01:03:03.461Z  INFO 99365 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-29T01:03:03.468Z  INFO 99365 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-01-29T01:03:03.471Z  INFO 99365 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 0.367 seconds (process running for 333.032)
+2024-01-29T01:03:03.472Z  INFO 99365 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-01-29T01:03:04.882Z  INFO 99365 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (2 additions, 0 deletions, 1 modification)
+2024-01-29T01:03:04.893Z  INFO 99365 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:03:04.893Z DEBUG 99365 --- [Thread-7] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:03:04.895Z DEBUG 99365 --- [Thread-7] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:03:04.896Z DEBUG 99365 --- [Thread-7] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:03:04.897Z DEBUG 99365 --- [Thread-7] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:03:04.898Z DEBUG 99365 --- [Thread-7] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:03:04.900Z  WARN 99365 --- [Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-01-29T01:03:04.901Z  INFO 99365 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-01-29T01:03:04.901Z  INFO 99365 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-01-29T01:03:04.948Z  INFO 99365 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 20.0.2 with PID 99365 (/Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system/target/classes started by tekporlipos in /Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system)
+2024-01-29T01:03:04.948Z  INFO 99365 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-29T01:03:05.019Z  INFO 99365 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-29T01:03:05.023Z  INFO 99365 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 2 JPA repository interfaces.
+2024-01-29T01:03:05.065Z  INFO 99365 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-29T01:03:05.065Z  INFO 99365 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29T01:03:05.066Z  INFO 99365 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-29T01:03:05.071Z  INFO 99365 --- [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-01-29T01:03:05.071Z  INFO 99365 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 122 ms
+2024-01-29T01:03:05.077Z  INFO 99365 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-01-29T01:03:05.078Z  INFO 99365 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
+2024-01-29T01:03:05.078Z  INFO 99365 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-01-29T01:03:05.078Z  INFO 99365 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-29T01:03:05.083Z DEBUG 99365 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-01-29T01:03:05.083Z DEBUG 99365 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-01-29T01:03:05.094Z  INFO 99365 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-29T01:03:05.095Z  INFO 99365 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-29T01:03:05.096Z  INFO 99365 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-29T01:03:05.097Z  WARN 99365 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-01-29T01:03:05.097Z  WARN 99365 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-29T01:03:05.126Z  INFO 99365 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-29T01:03:05.126Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:03:05.126Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:03:05.126Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:03:05.126Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:03:05.126Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:03:05.127Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : create table course (credit_hours integer not null, max_capacity integer not null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, code varchar(255) unique, department varchar(255), description varchar(255), instructor varchar(255), name varchar(255) unique, primary key (id))
+2024-01-29T01:03:05.128Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : create table student (date_of_birth date, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, level bigint not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, address varchar(255), contact_number varchar(255), email varchar(255) unique, first_name varchar(255), last_name varchar(255), reference_number varchar(255), primary key (id))
+2024-01-29T01:03:05.128Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : create table student_course (course_id uuid not null, student_id uuid not null)
+2024-01-29T01:03:05.128Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKq7yw2wg9wlt2cnj480hcdn6dq foreign key (student_id) references student
+2024-01-29T01:03:05.129Z DEBUG 99365 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKejrkh4gv8iqgmspsanaji90ws foreign key (course_id) references course
+2024-01-29T01:03:05.130Z  INFO 99365 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:03:05.176Z  WARN 99365 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-29T01:03:05.189Z DEBUG 99365 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2024-01-29T01:03:05.196Z DEBUG 99365 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-01-29T01:03:05.202Z DEBUG 99365 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-29T01:03:05.204Z DEBUG 99365 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-29T01:03:05.225Z  INFO 99365 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-29T01:03:05.231Z  INFO 99365 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-01-29T01:03:05.234Z  INFO 99365 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 0.296 seconds (process running for 334.795)
+2024-01-29T01:03:05.235Z  INFO 99365 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-01-29T01:06:12.920Z  INFO 99365 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:06:12.930Z DEBUG 99365 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:06:12.935Z DEBUG 99365 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:06:12.935Z DEBUG 99365 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:06:12.936Z DEBUG 99365 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:06:12.936Z DEBUG 99365 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:06:12.938Z  WARN 99365 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-01-29T01:06:12.938Z  INFO 99365 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-01-29T01:06:12.939Z  INFO 99365 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-01-29T01:06:15.168Z  INFO 1329 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 20.0.2 with PID 1329 (/Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system/target/classes started by tekporlipos in /Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system)
+2024-01-29T01:06:15.169Z  INFO 1329 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-29T01:06:15.520Z  INFO 1329 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-29T01:06:15.543Z  INFO 1329 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2024-01-29T01:06:15.766Z  INFO 1329 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-29T01:06:15.772Z  INFO 1329 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29T01:06:15.773Z  INFO 1329 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-29T01:06:15.793Z  INFO 1329 --- [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-01-29T01:06:15.793Z  INFO 1329 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 601 ms
+2024-01-29T01:06:15.806Z  INFO 1329 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-29T01:06:15.898Z  INFO 1329 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-01-29T01:06:15.900Z  INFO 1329 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-29T01:06:15.906Z  INFO 1329 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-29T01:06:15.913Z DEBUG 1329 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-01-29T01:06:15.914Z DEBUG 1329 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-01-29T01:06:15.958Z  INFO 1329 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-29T01:06:15.984Z  INFO 1329 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-29T01:06:16.002Z  INFO 1329 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-29T01:06:16.092Z  INFO 1329 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-29T01:06:16.111Z  WARN 1329 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-01-29T01:06:16.113Z  WARN 1329 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-29T01:06:16.537Z  INFO 1329 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-29T01:06:16.543Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:06:16.545Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:06:16.545Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:06:16.545Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:06:16.545Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:06:16.548Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : create table course (credit_hours integer not null, max_capacity integer not null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, code varchar(255) unique, department varchar(255), description varchar(255), instructor varchar(255), name varchar(255) unique, primary key (id))
+2024-01-29T01:06:16.552Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : create table student (date_of_birth date, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, level bigint not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, address varchar(255), contact_number varchar(255), email varchar(255) unique, first_name varchar(255), last_name varchar(255), reference_number varchar(255), primary key (id))
+2024-01-29T01:06:16.552Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : create table student_course (course_id uuid not null, student_id uuid not null)
+2024-01-29T01:06:16.553Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKq7yw2wg9wlt2cnj480hcdn6dq foreign key (student_id) references student
+2024-01-29T01:06:16.558Z DEBUG 1329 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKejrkh4gv8iqgmspsanaji90ws foreign key (course_id) references course
+2024-01-29T01:06:16.560Z  INFO 1329 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:06:16.760Z  WARN 1329 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-29T01:06:16.816Z DEBUG 1329 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2024-01-29T01:06:16.836Z DEBUG 1329 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-01-29T01:06:16.855Z DEBUG 1329 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-29T01:06:16.873Z DEBUG 1329 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-29T01:06:16.950Z  INFO 1329 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-29T01:06:16.970Z  INFO 1329 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-01-29T01:06:16.976Z  INFO 1329 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 1.995 seconds (process running for 2.338)
+2024-01-29T01:06:50.147Z  INFO 1329 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29T01:06:50.147Z  INFO 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-29T01:06:50.148Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-01-29T01:06:50.148Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-01-29T01:06:50.148Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-01-29T01:06:50.151Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@75cab390
+2024-01-29T01:06:50.151Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4ce63861
+2024-01-29T01:06:50.151Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-01-29T01:06:50.151Z  INFO 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-01-29T01:06:50.157Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/index.html", parameters={}
+2024-01-29T01:06:50.163Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:06:50.200Z DEBUG 1329 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:06:50.263Z DEBUG 1329 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-ui.css", parameters={}
+2024-01-29T01:06:50.263Z DEBUG 1329 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-initializer.js", parameters={}
+2024-01-29T01:06:50.263Z DEBUG 1329 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/index.css", parameters={}
+2024-01-29T01:06:50.263Z DEBUG 1329 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:06:50.263Z DEBUG 1329 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:06:50.263Z DEBUG 1329 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:06:50.264Z DEBUG 1329 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2024-01-29T01:06:50.264Z DEBUG 1329 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-ui-bundle.js", parameters={}
+2024-01-29T01:06:50.264Z DEBUG 1329 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:06:50.264Z DEBUG 1329 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:06:50.265Z DEBUG 1329 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:06:50.265Z DEBUG 1329 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:06:50.265Z DEBUG 1329 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:06:50.265Z DEBUG 1329 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:06:50.290Z DEBUG 1329 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:06:50.375Z DEBUG 1329 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs/swagger-config", parameters={}
+2024-01-29T01:06:50.378Z DEBUG 1329 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-01-29T01:06:50.397Z DEBUG 1329 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-01-29T01:06:50.400Z DEBUG 1329 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v1/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/api/v1/swagge (truncated)...]
+2024-01-29T01:06:50.405Z DEBUG 1329 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:06:50.452Z DEBUG 1329 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs", parameters={}
+2024-01-29T01:06:50.453Z DEBUG 1329 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-01-29T01:06:50.650Z  INFO 1329 --- [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 188 ms
+2024-01-29T01:06:50.659Z DEBUG 1329 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-01-29T01:06:50.660Z DEBUG 1329 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-01-29T01:06:50.661Z DEBUG 1329 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:07:10.415Z DEBUG 1329 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/courses", parameters={}
+2024-01-29T01:07:10.417Z DEBUG 1329 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#addCourse(AddCourseDTO)
+2024-01-29T01:07:10.445Z DEBUG 1329 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddCourseDTO(name=string1, code=string1, description=string, creditHours=20, department=string, inst (truncated)...]
+2024-01-29T01:07:10.500Z DEBUG 1329 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?)
+2024-01-29T01:07:10.520Z DEBUG 1329 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:07:10.521Z DEBUG 1329 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseBody(timestamp=2024-01-29T01:07:10.518338, status=201, data=CourseDTO(id=beaffcd5-a27f-41b5- (truncated)...]
+2024-01-29T01:07:10.522Z DEBUG 1329 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2024-01-29T01:07:23.345Z DEBUG 1329 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/courses", parameters={}
+2024-01-29T01:07:23.346Z DEBUG 1329 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#addCourse(AddCourseDTO)
+2024-01-29T01:07:23.355Z DEBUG 1329 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddCourseDTO(name=string1, code=string1, description=string, creditHours=20, department=string, inst (truncated)...]
+2024-01-29T01:07:23.359Z DEBUG 1329 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?)
+2024-01-29T01:07:23.362Z  WARN 1329 --- [http-nio-8080-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23505, SQLState: 23505
+2024-01-29T01:07:23.363Z ERROR 1329 --- [http-nio-8080-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_7 ON PUBLIC.COURSE(CODE NULLS FIRST) VALUES ( /* 1 */ 'string1' )"; SQL statement:
+insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?) [23505-224]
+2024-01-29T01:07:23.376Z DEBUG 1329 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.sms.schoolmanagementsystem.config.exception.GlobalExceptionHandler#handleException(Exception, HttpServletRequest)
+2024-01-29T01:07:23.377Z DEBUG 1329 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:07:23.378Z DEBUG 1329 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomErrorResponse(timestamp=2024-01-29T01:07:23.376628, status=500, error=could not execute statem (truncated)...]
+2024-01-29T01:07:23.379Z DEBUG 1329 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_7 ON PUBLIC.COURSE(CODE NULLS FIRST) VALUES ( /* 1 */ 'string1' )"; SQL statement:<EOL>insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?) [23505-224]] [insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?)]; SQL [insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?)]; constraint [null]]
+2024-01-29T01:07:23.379Z DEBUG 1329 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-01-29T01:12:45.645Z  INFO 1329 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:12:45.648Z DEBUG 1329 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:12:45.650Z DEBUG 1329 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:12:45.650Z DEBUG 1329 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:12:45.651Z DEBUG 1329 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:12:45.652Z DEBUG 1329 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:12:45.656Z  WARN 1329 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-01-29T01:12:45.656Z  INFO 1329 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29T01:12:45.657Z  INFO 1329 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29T01:12:47.970Z  INFO 2606 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 20.0.2 with PID 2606 (/Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system/target/classes started by tekporlipos in /Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system)
+2024-01-29T01:12:47.971Z  INFO 2606 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-29T01:12:48.313Z  INFO 2606 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-29T01:12:48.339Z  INFO 2606 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+2024-01-29T01:12:48.556Z  INFO 2606 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-29T01:12:48.562Z  INFO 2606 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29T01:12:48.562Z  INFO 2606 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-29T01:12:48.587Z  INFO 2606 --- [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-01-29T01:12:48.587Z  INFO 2606 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 593 ms
+2024-01-29T01:12:48.600Z  INFO 2606 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-29T01:12:48.694Z  INFO 2606 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-01-29T01:12:48.695Z  INFO 2606 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-29T01:12:48.701Z  INFO 2606 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-29T01:12:48.710Z DEBUG 2606 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-01-29T01:12:48.710Z DEBUG 2606 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-01-29T01:12:48.757Z  INFO 2606 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-29T01:12:48.780Z  INFO 2606 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-29T01:12:48.795Z  INFO 2606 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-29T01:12:48.890Z  INFO 2606 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-29T01:12:48.909Z  WARN 2606 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-01-29T01:12:48.911Z  WARN 2606 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-29T01:12:49.308Z  INFO 2606 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-29T01:12:49.314Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:12:49.316Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:12:49.316Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:12:49.316Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:12:49.316Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:12:49.319Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : create table course (credit_hours integer not null, max_capacity integer not null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, code varchar(255) unique, department varchar(255), description varchar(255), instructor varchar(255), name varchar(255) unique, primary key (id))
+2024-01-29T01:12:49.322Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : create table student (date_of_birth date, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, level bigint not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, address varchar(255), contact_number varchar(255), email varchar(255) unique, first_name varchar(255), last_name varchar(255), reference_number varchar(255) unique, primary key (id))
+2024-01-29T01:12:49.323Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : create table student_course (course_id uuid not null, student_id uuid not null)
+2024-01-29T01:12:49.324Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKq7yw2wg9wlt2cnj480hcdn6dq foreign key (student_id) references student
+2024-01-29T01:12:49.329Z DEBUG 2606 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKejrkh4gv8iqgmspsanaji90ws foreign key (course_id) references course
+2024-01-29T01:12:49.331Z  INFO 2606 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:12:49.555Z  WARN 2606 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-29T01:12:49.606Z DEBUG 2606 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2024-01-29T01:12:49.628Z DEBUG 2606 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-01-29T01:12:49.644Z DEBUG 2606 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-29T01:12:49.663Z DEBUG 2606 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-29T01:12:49.734Z  INFO 2606 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-29T01:12:49.751Z  INFO 2606 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-01-29T01:12:49.757Z  INFO 2606 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 1.96 seconds (process running for 2.233)
+2024-01-29T01:14:15.762Z  INFO 2606 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:14:15.765Z DEBUG 2606 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:14:15.767Z DEBUG 2606 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:14:15.767Z DEBUG 2606 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:14:15.769Z DEBUG 2606 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:14:15.770Z DEBUG 2606 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:14:15.775Z  WARN 2606 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-01-29T01:14:15.775Z  INFO 2606 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29T01:14:15.776Z  INFO 2606 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29T01:14:17.722Z  INFO 2909 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 20.0.2 with PID 2909 (/Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system/target/classes started by tekporlipos in /Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system)
+2024-01-29T01:14:17.723Z  INFO 2909 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-29T01:14:18.082Z  INFO 2909 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-29T01:14:18.110Z  INFO 2909 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 2 JPA repository interfaces.
+2024-01-29T01:14:18.366Z  INFO 2909 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-29T01:14:18.376Z  INFO 2909 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29T01:14:18.376Z  INFO 2909 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-29T01:14:18.402Z  INFO 2909 --- [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-01-29T01:14:18.402Z  INFO 2909 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 657 ms
+2024-01-29T01:14:18.415Z  INFO 2909 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-29T01:14:18.519Z  INFO 2909 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-01-29T01:14:18.519Z  INFO 2909 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-29T01:14:18.524Z  INFO 2909 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-29T01:14:18.532Z DEBUG 2909 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-01-29T01:14:18.532Z DEBUG 2909 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-01-29T01:14:18.582Z  INFO 2909 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-29T01:14:18.607Z  INFO 2909 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-29T01:14:18.622Z  INFO 2909 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-29T01:14:18.715Z  INFO 2909 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-29T01:14:18.734Z  WARN 2909 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-01-29T01:14:18.735Z  WARN 2909 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-29T01:14:19.141Z  INFO 2909 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-29T01:14:19.147Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:14:19.149Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:14:19.149Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:14:19.150Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:14:19.150Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:14:19.153Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : create table course (credit_hours integer not null, max_capacity integer not null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, code varchar(255) unique, department varchar(255), description varchar(255), instructor varchar(255), name varchar(255) unique, primary key (id))
+2024-01-29T01:14:19.156Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : create table student (date_of_birth date, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, level bigint not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, address varchar(255), contact_number varchar(255), email varchar(255) unique, first_name varchar(255), last_name varchar(255), reference_number varchar(255) unique, primary key (id))
+2024-01-29T01:14:19.157Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : create table student_course (course_id uuid not null, student_id uuid not null)
+2024-01-29T01:14:19.157Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKq7yw2wg9wlt2cnj480hcdn6dq foreign key (student_id) references student
+2024-01-29T01:14:19.163Z DEBUG 2909 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKejrkh4gv8iqgmspsanaji90ws foreign key (course_id) references course
+2024-01-29T01:14:19.165Z  INFO 2909 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:14:19.388Z  WARN 2909 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-29T01:14:19.437Z DEBUG 2909 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2024-01-29T01:14:19.456Z DEBUG 2909 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-01-29T01:14:19.475Z DEBUG 2909 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-29T01:14:19.494Z DEBUG 2909 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-29T01:14:19.564Z  INFO 2909 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-29T01:14:19.579Z  INFO 2909 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-01-29T01:14:19.586Z  INFO 2909 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 2.034 seconds (process running for 2.301)
+2024-01-29T01:14:30.041Z  INFO 2909 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29T01:14:30.041Z  INFO 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-29T01:14:30.041Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-01-29T01:14:30.041Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-01-29T01:14:30.042Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-01-29T01:14:30.044Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@66b52009
+2024-01-29T01:14:30.044Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@f799bcb
+2024-01-29T01:14:30.044Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-01-29T01:14:30.044Z  INFO 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-01-29T01:14:30.051Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/index.html", parameters={}
+2024-01-29T01:14:30.057Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:14:30.070Z DEBUG 2909 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:14:30.134Z DEBUG 2909 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-initializer.js", parameters={}
+2024-01-29T01:14:30.135Z DEBUG 2909 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:14:30.155Z DEBUG 2909 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:14:30.226Z DEBUG 2909 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs/swagger-config", parameters={}
+2024-01-29T01:14:30.227Z DEBUG 2909 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-01-29T01:14:30.237Z DEBUG 2909 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-01-29T01:14:30.237Z DEBUG 2909 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v1/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/api/v1/swagge (truncated)...]
+2024-01-29T01:14:30.240Z DEBUG 2909 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:14:30.266Z DEBUG 2909 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs", parameters={}
+2024-01-29T01:14:30.267Z DEBUG 2909 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-01-29T01:14:30.463Z  INFO 2909 --- [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 179 ms
+2024-01-29T01:14:30.471Z DEBUG 2909 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-01-29T01:14:30.473Z DEBUG 2909 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-01-29T01:14:30.473Z DEBUG 2909 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:14:43.953Z DEBUG 2909 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/courses?page=0&size=1&sort=string", parameters={masked}
+2024-01-29T01:14:43.954Z DEBUG 2909 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#getAllCourses(Pageable)
+2024-01-29T01:14:43.990Z DEBUG 2909 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.sms.schoolmanagementsystem.config.exception.GlobalExceptionHandler#handleException(Exception, HttpServletRequest)
+2024-01-29T01:14:43.993Z DEBUG 2909 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:14:43.994Z DEBUG 2909 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomErrorResponse(timestamp=2024-01-29T01:14:43.991773, status=500, error=No property 'string' fou (truncated)...]
+2024-01-29T01:14:43.995Z DEBUG 2909 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.data.mapping.PropertyReferenceException: No property 'string' found for type 'Course']
+2024-01-29T01:14:43.995Z DEBUG 2909 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-01-29T01:14:49.850Z DEBUG 2909 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/courses?page=0&size=1&sort=", parameters={masked}
+2024-01-29T01:14:49.870Z DEBUG 2909 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#getAllCourses(Pageable)
+2024-01-29T01:14:49.959Z DEBUG 2909 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 offset ? rows fetch first ? rows only
+2024-01-29T01:14:49.978Z DEBUG 2909 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:14:49.980Z DEBUG 2909 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 0 containing UNKNOWN instances]
+2024-01-29T01:14:49.993Z DEBUG 2909 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:15:20.024Z DEBUG 2909 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/courses", parameters={}
+2024-01-29T01:15:20.035Z DEBUG 2909 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#addCourse(AddCourseDTO)
+2024-01-29T01:15:20.078Z DEBUG 2909 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddCourseDTO(name=string, code=string, description=string, creditHours=20, department=string, instru (truncated)...]
+2024-01-29T01:15:20.119Z DEBUG 2909 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 where c1_0.code=? or c1_0.name=?
+2024-01-29T01:15:20.140Z DEBUG 2909 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?)
+2024-01-29T01:15:20.149Z DEBUG 2909 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:15:20.149Z DEBUG 2909 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseBody(timestamp=2024-01-29T01:15:20.148792, status=201, data=CourseDTO(id=c57baf02-32ec-49dc- (truncated)...]
+2024-01-29T01:15:20.150Z DEBUG 2909 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2024-01-29T01:16:23.108Z  INFO 2909 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:16:23.111Z DEBUG 2909 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:16:23.112Z DEBUG 2909 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:16:23.112Z DEBUG 2909 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:16:23.114Z DEBUG 2909 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:16:23.114Z DEBUG 2909 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:16:23.118Z  WARN 2909 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-01-29T01:16:23.119Z  INFO 2909 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29T01:16:23.120Z  INFO 2909 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29T01:16:25.335Z  INFO 3319 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 20.0.2 with PID 3319 (/Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system/target/classes started by tekporlipos in /Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system)
+2024-01-29T01:16:25.336Z  INFO 3319 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-29T01:16:25.683Z  INFO 3319 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-29T01:16:25.710Z  INFO 3319 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 2 JPA repository interfaces.
+2024-01-29T01:16:25.919Z  INFO 3319 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-29T01:16:25.924Z  INFO 3319 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29T01:16:25.924Z  INFO 3319 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-29T01:16:25.944Z  INFO 3319 --- [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-01-29T01:16:25.944Z  INFO 3319 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 586 ms
+2024-01-29T01:16:25.957Z  INFO 3319 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-29T01:16:26.043Z  INFO 3319 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-01-29T01:16:26.044Z  INFO 3319 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-29T01:16:26.050Z  INFO 3319 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-29T01:16:26.058Z DEBUG 3319 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-01-29T01:16:26.058Z DEBUG 3319 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-01-29T01:16:26.106Z  INFO 3319 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-29T01:16:26.130Z  INFO 3319 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-29T01:16:26.145Z  INFO 3319 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-29T01:16:26.230Z  INFO 3319 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-29T01:16:26.248Z  WARN 3319 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-01-29T01:16:26.250Z  WARN 3319 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-29T01:16:26.651Z  INFO 3319 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-29T01:16:26.657Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:16:26.658Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:16:26.658Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:16:26.659Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:16:26.659Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:16:26.661Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : create table course (credit_hours integer not null, max_capacity integer not null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, code varchar(255) unique, department varchar(255), description varchar(255), instructor varchar(255), name varchar(255) unique, primary key (id))
+2024-01-29T01:16:26.665Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : create table student (date_of_birth date, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, level bigint not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, address varchar(255), contact_number varchar(255), email varchar(255) unique, first_name varchar(255), last_name varchar(255), reference_number varchar(255) unique, primary key (id))
+2024-01-29T01:16:26.666Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : create table student_course (course_id uuid not null, student_id uuid not null)
+2024-01-29T01:16:26.666Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKq7yw2wg9wlt2cnj480hcdn6dq foreign key (student_id) references student
+2024-01-29T01:16:26.671Z DEBUG 3319 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKejrkh4gv8iqgmspsanaji90ws foreign key (course_id) references course
+2024-01-29T01:16:26.673Z  INFO 3319 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:16:26.892Z  WARN 3319 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-29T01:16:26.944Z DEBUG 3319 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2024-01-29T01:16:26.963Z DEBUG 3319 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-01-29T01:16:26.979Z DEBUG 3319 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-29T01:16:26.995Z DEBUG 3319 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-29T01:16:27.070Z  INFO 3319 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-29T01:16:27.088Z  INFO 3319 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-01-29T01:16:27.095Z  INFO 3319 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 1.934 seconds (process running for 2.241)
+2024-01-29T01:16:30.977Z  INFO 3319 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29T01:16:30.977Z  INFO 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-29T01:16:30.978Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-01-29T01:16:30.978Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-01-29T01:16:30.978Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-01-29T01:16:30.979Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@58c2fe32
+2024-01-29T01:16:30.980Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@758ef644
+2024-01-29T01:16:30.980Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-01-29T01:16:30.980Z  INFO 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-01-29T01:16:30.987Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/index.html", parameters={}
+2024-01-29T01:16:30.993Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:16:31.006Z DEBUG 3319 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:16:31.058Z DEBUG 3319 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-initializer.js", parameters={}
+2024-01-29T01:16:31.059Z DEBUG 3319 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:16:31.081Z DEBUG 3319 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:16:31.173Z DEBUG 3319 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs/swagger-config", parameters={}
+2024-01-29T01:16:31.175Z DEBUG 3319 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-01-29T01:16:31.183Z DEBUG 3319 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-01-29T01:16:31.184Z DEBUG 3319 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v1/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/api/v1/swagge (truncated)...]
+2024-01-29T01:16:31.187Z DEBUG 3319 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:16:31.221Z DEBUG 3319 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs", parameters={}
+2024-01-29T01:16:31.222Z DEBUG 3319 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-01-29T01:16:31.411Z  INFO 3319 --- [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 182 ms
+2024-01-29T01:16:31.421Z DEBUG 3319 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-01-29T01:16:31.422Z DEBUG 3319 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-01-29T01:16:31.423Z DEBUG 3319 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:16:36.321Z DEBUG 3319 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/courses", parameters={}
+2024-01-29T01:16:36.326Z DEBUG 3319 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#addCourse(AddCourseDTO)
+2024-01-29T01:16:36.363Z DEBUG 3319 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddCourseDTO(name=string, code=string, description=string, creditHours=0, department=string, instruc (truncated)...]
+2024-01-29T01:16:36.455Z DEBUG 3319 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 where c1_0.code=? or c1_0.name=?
+2024-01-29T01:16:36.492Z DEBUG 3319 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?)
+2024-01-29T01:16:36.501Z DEBUG 3319 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:16:36.503Z DEBUG 3319 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseBody(timestamp=2024-01-29T01:16:36.500456, status=201, data=CourseDTO(id=aa885b98-593d-486b- (truncated)...]
+2024-01-29T01:16:36.504Z DEBUG 3319 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2024-01-29T01:16:39.974Z DEBUG 3319 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/courses", parameters={}
+2024-01-29T01:16:39.975Z DEBUG 3319 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#addCourse(AddCourseDTO)
+2024-01-29T01:16:39.978Z DEBUG 3319 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddCourseDTO(name=string, code=string, description=string, creditHours=0, department=string, instruc (truncated)...]
+2024-01-29T01:16:39.982Z DEBUG 3319 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 where c1_0.code=? or c1_0.name=?
+2024-01-29T01:16:40.013Z DEBUG 3319 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.sms.schoolmanagementsystem.config.exception.GlobalExceptionHandler#handleCustomException(CustomException, HttpServletRequest)
+2024-01-29T01:16:40.014Z DEBUG 3319 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:16:40.015Z DEBUG 3319 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomErrorResponse(timestamp=2024-01-29T01:16:40.014184, status=403, error=Course already exist, pa (truncated)...]
+2024-01-29T01:16:40.015Z DEBUG 3319 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.sms.schoolmanagementsystem.config.exception.CustomException: Course already exist]
+2024-01-29T01:16:40.016Z DEBUG 3319 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 403 FORBIDDEN
+2024-01-29T01:18:47.569Z  INFO 3319 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:18:47.573Z DEBUG 3319 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:18:47.574Z DEBUG 3319 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:18:47.574Z DEBUG 3319 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:18:47.576Z DEBUG 3319 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:18:47.577Z DEBUG 3319 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:18:47.581Z  WARN 3319 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-01-29T01:18:47.581Z  INFO 3319 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29T01:18:47.582Z  INFO 3319 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29T01:18:49.691Z  INFO 3789 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 20.0.2 with PID 3789 (/Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system/target/classes started by tekporlipos in /Users/tekporlipos/Desktop/Bootcamp/TED-Search/school-management-system)
+2024-01-29T01:18:49.692Z  INFO 3789 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-29T01:18:50.046Z  INFO 3789 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-29T01:18:50.078Z  INFO 3789 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2024-01-29T01:18:50.282Z  INFO 3789 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-29T01:18:50.287Z  INFO 3789 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29T01:18:50.287Z  INFO 3789 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-29T01:18:50.310Z  INFO 3789 --- [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-01-29T01:18:50.311Z  INFO 3789 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2024-01-29T01:18:50.325Z  INFO 3789 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-29T01:18:50.423Z  INFO 3789 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-01-29T01:18:50.423Z  INFO 3789 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-29T01:18:50.428Z  INFO 3789 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-29T01:18:50.437Z DEBUG 3789 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-01-29T01:18:50.437Z DEBUG 3789 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-01-29T01:18:50.484Z  INFO 3789 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-29T01:18:50.509Z  INFO 3789 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-29T01:18:50.522Z  INFO 3789 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-29T01:18:50.616Z  INFO 3789 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-29T01:18:50.635Z  WARN 3789 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-01-29T01:18:50.636Z  WARN 3789 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-29T01:18:51.044Z  INFO 3789 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-29T01:18:51.050Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKq7yw2wg9wlt2cnj480hcdn6dq
+2024-01-29T01:18:51.052Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course drop constraint if exists FKejrkh4gv8iqgmspsanaji90ws
+2024-01-29T01:18:51.052Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : drop table if exists course cascade
+2024-01-29T01:18:51.052Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student cascade
+2024-01-29T01:18:51.052Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : drop table if exists student_course cascade
+2024-01-29T01:18:51.055Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : create table course (credit_hours integer not null, max_capacity integer not null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, code varchar(255) unique, department varchar(255), description varchar(255), instructor varchar(255), name varchar(255) unique, primary key (id))
+2024-01-29T01:18:51.058Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : create table student (date_of_birth date, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, level bigint not null, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, id uuid not null, address varchar(255), contact_number varchar(255), email varchar(255) unique, first_name varchar(255), last_name varchar(255), reference_number varchar(255) unique, primary key (id))
+2024-01-29T01:18:51.059Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : create table student_course (course_id uuid not null, student_id uuid not null)
+2024-01-29T01:18:51.059Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKq7yw2wg9wlt2cnj480hcdn6dq foreign key (student_id) references student
+2024-01-29T01:18:51.064Z DEBUG 3789 --- [restartedMain] org.hibernate.SQL                        : alter table if exists student_course add constraint FKejrkh4gv8iqgmspsanaji90ws foreign key (course_id) references course
+2024-01-29T01:18:51.067Z  INFO 3789 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29T01:18:51.299Z  WARN 3789 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-29T01:18:51.350Z DEBUG 3789 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2024-01-29T01:18:51.367Z DEBUG 3789 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-01-29T01:18:51.385Z DEBUG 3789 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-29T01:18:51.402Z DEBUG 3789 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-29T01:18:51.475Z  INFO 3789 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-29T01:18:51.491Z  INFO 3789 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-01-29T01:18:51.497Z  INFO 3789 --- [restartedMain] c.s.s.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 2.012 seconds (process running for 2.287)
+2024-01-29T01:18:57.236Z  INFO 3789 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29T01:18:57.236Z  INFO 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-29T01:18:57.237Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-01-29T01:18:57.237Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-01-29T01:18:57.237Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-01-29T01:18:57.239Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@15f2dab5
+2024-01-29T01:18:57.239Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@310546c6
+2024-01-29T01:18:57.240Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-01-29T01:18:57.240Z  INFO 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-01-29T01:18:57.245Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/index.html", parameters={}
+2024-01-29T01:18:57.251Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:18:57.267Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-01-29T01:18:57.316Z DEBUG 3789 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-initializer.js", parameters={}
+2024-01-29T01:18:57.316Z DEBUG 3789 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:18:57.356Z DEBUG 3789 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:18:57.428Z DEBUG 3789 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs/swagger-config", parameters={}
+2024-01-29T01:18:57.429Z DEBUG 3789 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-01-29T01:18:57.445Z DEBUG 3789 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-01-29T01:18:57.446Z DEBUG 3789 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v1/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/api/v1/swagge (truncated)...]
+2024-01-29T01:18:57.450Z DEBUG 3789 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:18:57.497Z DEBUG 3789 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs", parameters={}
+2024-01-29T01:18:57.498Z DEBUG 3789 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-01-29T01:18:57.822Z  INFO 3789 --- [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 302 ms
+2024-01-29T01:18:57.849Z DEBUG 3789 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-01-29T01:18:57.853Z DEBUG 3789 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-01-29T01:18:57.855Z DEBUG 3789 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:19:10.222Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/courses", parameters={}
+2024-01-29T01:19:10.227Z DEBUG 3789 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#addCourse(AddCourseDTO)
+2024-01-29T01:19:10.269Z DEBUG 3789 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddCourseDTO(name=string, code=string, description=string, creditHours=0, department=string, instruc (truncated)...]
+2024-01-29T01:19:10.359Z DEBUG 3789 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 where c1_0.code=? or c1_0.name=?
+2024-01-29T01:19:10.395Z DEBUG 3789 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : insert into course (code,created_at,credit_hours,department,description,instructor,max_capacity,name,updated_at,id) values (?,?,?,?,?,?,?,?,?,?)
+2024-01-29T01:19:10.406Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:19:10.407Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseBody(timestamp=2024-01-29T01:19:10.404279, status=201, data=CourseDTO(id=8e99963b-ffaa-459c- (truncated)...]
+2024-01-29T01:19:10.409Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2024-01-29T01:19:16.212Z DEBUG 3789 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/courses", parameters={}
+2024-01-29T01:19:16.214Z DEBUG 3789 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#addCourse(AddCourseDTO)
+2024-01-29T01:19:16.216Z DEBUG 3789 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddCourseDTO(name=string, code=string, description=string, creditHours=0, department=string, instruc (truncated)...]
+2024-01-29T01:19:16.224Z DEBUG 3789 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 where c1_0.code=? or c1_0.name=?
+2024-01-29T01:19:16.237Z DEBUG 3789 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.sms.schoolmanagementsystem.config.exception.GlobalExceptionHandler#handleCustomException(CustomException, HttpServletRequest)
+2024-01-29T01:19:16.239Z DEBUG 3789 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:19:16.240Z DEBUG 3789 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomErrorResponse(timestamp=2024-01-29T01:19:16.238398, status=422, error=Course already exist, pa (truncated)...]
+2024-01-29T01:19:16.241Z DEBUG 3789 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.sms.schoolmanagementsystem.config.exception.CustomException: Course already exist]
+2024-01-29T01:19:16.242Z DEBUG 3789 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2024-01-29T01:19:55.719Z DEBUG 3789 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/courses?page=0&size=1&sort=", parameters={masked}
+2024-01-29T01:19:55.727Z DEBUG 3789 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#getAllCourses(Pageable)
+2024-01-29T01:19:55.767Z DEBUG 3789 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 offset ? rows fetch first ? rows only
+2024-01-29T01:19:55.774Z DEBUG 3789 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select count(c1_0.id) from course c1_0
+2024-01-29T01:19:55.785Z DEBUG 3789 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select s1_0.course_id,s1_1.id,s1_1.address,s1_1.contact_number,s1_1.created_at,s1_1.date_of_birth,s1_1.email,s1_1.first_name,s1_1.last_name,s1_1.level,s1_1.reference_number,s1_1.updated_at from student_course s1_0 join student s1_1 on s1_1.id=s1_0.student_id where s1_0.course_id=?
+2024-01-29T01:19:55.790Z DEBUG 3789 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:19:55.790Z DEBUG 3789 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.sms.schoolmanagementsystem.model.dto.CourseDTO instances]
+2024-01-29T01:19:55.796Z DEBUG 3789 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:21:11.657Z DEBUG 3789 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/courses/8e99963b-ffaa-459c-af35-f408f9897a19", parameters={}
+2024-01-29T01:21:11.668Z DEBUG 3789 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.CourseController#getCourseById(UUID)
+2024-01-29T01:21:11.703Z DEBUG 3789 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.code,c1_0.created_at,c1_0.credit_hours,c1_0.department,c1_0.description,c1_0.instructor,c1_0.max_capacity,c1_0.name,c1_0.updated_at from course c1_0 where c1_0.id=?
+2024-01-29T01:21:11.707Z DEBUG 3789 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select s1_0.course_id,s1_1.id,s1_1.address,s1_1.contact_number,s1_1.created_at,s1_1.date_of_birth,s1_1.email,s1_1.first_name,s1_1.last_name,s1_1.level,s1_1.reference_number,s1_1.updated_at from student_course s1_0 join student s1_1 on s1_1.id=s1_0.student_id where s1_0.course_id=?
+2024-01-29T01:21:11.709Z DEBUG 3789 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:21:11.709Z DEBUG 3789 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseBody(timestamp=2024-01-29T01:21:11.708450, status=201, data=CourseDTO(id=8e99963b-ffaa-459c- (truncated)...]
+2024-01-29T01:21:11.710Z DEBUG 3789 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2024-01-29T01:21:26.299Z DEBUG 3789 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/swagger-ui/swagger-initializer.js", parameters={}
+2024-01-29T01:21:26.300Z DEBUG 3789 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-01-29T01:21:26.323Z DEBUG 3789 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:21:26.395Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs/swagger-config", parameters={}
+2024-01-29T01:21:26.396Z DEBUG 3789 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-01-29T01:21:26.398Z DEBUG 3789 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-01-29T01:21:26.398Z DEBUG 3789 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v1/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/api/v1/swagge (truncated)...]
+2024-01-29T01:21:26.399Z DEBUG 3789 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:21:26.413Z DEBUG 3789 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/v3/api-docs", parameters={}
+2024-01-29T01:21:26.415Z DEBUG 3789 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-01-29T01:21:26.425Z DEBUG 3789 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-01-29T01:21:26.428Z DEBUG 3789 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-01-29T01:21:26.429Z DEBUG 3789 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-01-29T01:23:00.758Z DEBUG 3789 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/students", parameters={}
+2024-01-29T01:23:00.780Z DEBUG 3789 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.StudentController#addStudent(AddStudentDTO)
+2024-01-29T01:23:00.809Z DEBUG 3789 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddStudentDTO(firstName=string, lastName=string, dateOfBirth=2024-01-29, address=string, contactNumb (truncated)...]
+2024-01-29T01:23:00.835Z DEBUG 3789 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.sms.schoolmanagementsystem.config.exception.GlobalExceptionHandler#handleException(Exception, HttpServletRequest)
+2024-01-29T01:23:00.835Z DEBUG 3789 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:23:00.836Z DEBUG 3789 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomErrorResponse(timestamp=2024-01-29T01:23:00.835654, status=500, error=Validation failed for ar (truncated)...]
+2024-01-29T01:23:00.836Z DEBUG 3789 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.sms.schoolmanagementsystem.model.dto.AddStudentDTO> com.sms.schoolmanagementsystem.controller.StudentController.addStudent(com.sms.schoolmanagementsystem.model.dto.AddStudentDTO): [Field error in object 'addStudentDTO' on field 'level': rejected value [0]; codes [Positive.addStudentDTO.level,Positive.level,Positive.java.lang.Long,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [addStudentDTO.level,level]; arguments []; default message [level]]; default message [Student level value must be a positive number]] ]
+2024-01-29T01:23:00.836Z DEBUG 3789 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-01-29T01:23:13.403Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/students", parameters={}
+2024-01-29T01:23:13.418Z DEBUG 3789 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sms.schoolmanagementsystem.controller.StudentController#addStudent(AddStudentDTO)
+2024-01-29T01:23:13.445Z DEBUG 3789 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AddStudentDTO(firstName=string, lastName=string, dateOfBirth=2024-01-29, address=string, contactNumb (truncated)...]
+2024-01-29T01:23:13.454Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-01-29T01:23:13.455Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [AddStudentDTO(firstName=string, lastName=string, dateOfBirth=2024-01-29, address=string, contactNumb (truncated)...]
+2024-01-29T01:23:13.459Z DEBUG 3789 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED

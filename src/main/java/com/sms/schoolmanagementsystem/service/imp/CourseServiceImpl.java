@@ -26,6 +26,9 @@ public class CourseServiceImpl implements CommonService<CourseDTO, AddCourseDTO>
 
     @Override
     public CourseDTO addEntity(AddCourseDTO dto) {
+        if (courseRepository.findCourseByCodeOrName(dto.getCode(),dto.getName()).isPresent()){
+            throw new CustomException("Course already exist", HttpStatus.UNPROCESSABLE_ENTITY);
+        }
         Course save = courseRepository.save(objectMapper.convertValue(dto, Course.class));
         return objectMapper.convertValue(save, CourseDTO.class);
     }
