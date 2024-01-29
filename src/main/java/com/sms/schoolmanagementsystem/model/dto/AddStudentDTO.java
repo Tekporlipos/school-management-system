@@ -1,6 +1,5 @@
 package com.sms.schoolmanagementsystem.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
@@ -38,8 +37,11 @@ public class AddStudentDTO {
     private Long level;
 
 
-    @JsonIgnore
+
+    @NotEmpty(message = "Student courseIds can not be empty")
+    @NotNull(message = "Student courseIds can not be null")
     private List<UUID> courseIds;
+
 
 }
 

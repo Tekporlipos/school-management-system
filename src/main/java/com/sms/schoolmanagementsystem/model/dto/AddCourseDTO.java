@@ -5,10 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
-
 @Data
 public class AddCourseDTO {
 
@@ -16,7 +12,6 @@ public class AddCourseDTO {
     private String name;
 
     @NotBlank(message = "Course code can not be empty")
-    @Positive(message = "Student level value must be a positive number")
     private String code;
 
     private String description;

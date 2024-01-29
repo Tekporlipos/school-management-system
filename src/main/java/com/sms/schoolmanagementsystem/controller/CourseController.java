@@ -1,7 +1,9 @@
 package com.sms.schoolmanagementsystem.controller;
 
+import com.sms.schoolmanagementsystem.config.ResponseBody;
 import com.sms.schoolmanagementsystem.model.dto.AddCourseDTO;
 import com.sms.schoolmanagementsystem.model.dto.CourseDTO;
+import com.sms.schoolmanagementsystem.service.imp.CourseServiceImpl;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,19 +18,27 @@ import java.util.UUID;
 @AllArgsConstructor
 @RequestMapping("/courses")
 public class CourseController {
-    @PostMapping
-    public ResponseEntity<AddCourseDTO> addCourse(@Valid @RequestBody AddCourseDTO course) {
 
-        return new ResponseEntity<>(course, HttpStatus.CREATED);
+    private final CourseServiceImpl courseService;
+
+    @PostMapping
+    public ResponseEntity<ResponseBody<CourseDTO>> addCourse(@Valid @RequestBody AddCourseDTO course) {
+        ResponseBody<CourseDTO> courseDTOResponseBody = new ResponseBody<>(courseService.addEntity(course));
+        courseDTOResponseBody.setStatus(HttpStatus.CREATED.value());
+        courseDTOResponseBody.setMessage("Course added successfully");
+        return new ResponseEntity<>(courseDTOResponseBody, HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<Page<CourseDTO>> getAllCourses(Pageable pageable) {
-        return null;
+        return ResponseEntity.ok(courseService.getAllEntities(pageable));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CourseDTO> getCourseById(@PathVariable UUID id) {
-        return null;
+    public ResponseEntity<ResponseBody<CourseDTO>> getCourseById(@PathVariable UUID id) {
+        ResponseBody<CourseDTO> courseDTOResponseBody = new ResponseBody<>(courseService.getEntityById(id));
+        courseDTOResponseBody.setStatus(HttpStatus.CREATED.value());
+        courseDTOResponseBody.setMessage("Course data retried successfully");
+        return new ResponseEntity<>(courseDTOResponseBody, HttpStatus.CREATED);
     }
 }

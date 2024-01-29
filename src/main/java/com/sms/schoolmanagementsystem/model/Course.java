@@ -26,9 +26,11 @@ public class Course {
 
     @NotBlank
     @NotEmpty
+    @Column(unique = true)
     private String name;
 
     @NotBlank
+    @Column(unique = true)
     private String code;
 
     private String description;

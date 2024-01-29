@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -23,22 +22,12 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(CustomException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<CustomErrorResponse> handleBadRequestException(CustomException e, HttpServletRequest request) {
+    public ResponseEntity<CustomErrorResponse> handleCustomException(CustomException e, HttpServletRequest request) {
         CustomErrorResponse errorResponse = new CustomErrorResponse(
-                HttpStatus.BAD_REQUEST.value(),
+                e.getHttpStatus().value(),
                 e.getMessage(),
                 request.getRequestURI()
         );
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-    }
-
-   static public ResponseEntity<CustomErrorResponse> handleException(CustomException e, HttpStatus httpStatus) {
-        CustomErrorResponse errorResponse = new CustomErrorResponse(
-                httpStatus.value(),
-                e.getMessage(),
-                null
-        );
-        return new ResponseEntity<>(errorResponse, httpStatus);
+        return new ResponseEntity<>(errorResponse, e.getHttpStatus());
     }
 }
