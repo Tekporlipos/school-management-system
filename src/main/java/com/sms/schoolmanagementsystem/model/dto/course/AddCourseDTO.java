@@ -4,8 +4,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import java.util.UUID;
+
+
 @Data
 public class AddCourseDTO {
+
+    private UUID id;
 
     @NotBlank(message = "Course name can not be empty")
     private String name;

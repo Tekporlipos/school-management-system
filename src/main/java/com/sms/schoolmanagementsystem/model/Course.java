@@ -51,7 +51,7 @@ public class Course {
             name = "student_course",
             joinColumns = @JoinColumn(name = "course_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private List<Student> students;
+    private List<Students> students;
 
     @Column( columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false, updatable = false)
     @CreationTimestamp

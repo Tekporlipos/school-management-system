@@ -6,22 +6,21 @@ import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class StudentDTO extends  AddStudentDTO{
 
-    private UUID id;
-
     @JsonIgnore
-    private List<UUID> courseIds;
+    private Set<UUID> courseIds;
 
-    private List<CourseDTO> courses;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
-    private LocalDateTime updatedAt;
+    private Set<AddCourseDTO> courses;
 
 }
 

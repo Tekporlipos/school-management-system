@@ -4,11 +4,12 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.sql.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Data
 public class AddStudentDTO {
+
+    private UUID id;
 
     @NotBlank(message = "Student firstName can not be empty")
     private String firstName;
@@ -35,13 +36,6 @@ public class AddStudentDTO {
     @NotNull(message = "Student level can not be empty")
     @Positive(message = "Student level value must be a positive number")
     private Long level;
-
-
-
-    @NotEmpty(message = "Student courseIds can not be empty")
-    @NotNull(message = "Student courseIds can not be null")
-    private List<UUID> courseIds;
-
 
 }
 
